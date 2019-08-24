@@ -11,13 +11,19 @@
 add_action( 'init', function () {
 
     wp_register_script(
-        'gutenberg201908-01-hello',
+        'gutenberg201908-hello',
         plugins_url( 'build/index.js', __FILE__ ),
-        [ 'wp-blocks', 'wp-i18n', 'wp-element' ]
+        [ 'wp-blocks', 'wp-element', 'wp-i18n', ],
     );
 
-    register_block_type( 'gutenberg201908/01-hello', [
-        'editor_script' => 'gutenberg201908-01-hello',
+    wp_register_style(
+        'gutenberg201908-hello',
+        plugins_url( 'src/index.css', __FILE__ ),
+    );
+
+    register_block_type( 'gutenberg201908/hello', [
+        'style' => 'gutenberg201908-hello',
+        'editor_script' => 'gutenberg201908-hello',
     ] );
 
 } );
