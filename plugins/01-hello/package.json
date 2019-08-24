@@ -1,0 +1,12 @@
+{
+  "name": "01-hello",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "@wordpress/scripts": "^3.4.0"
+  },
+  "scripts": {
+    "start": "wp-scripts start",
+    "build": "wp-scripts build"
+  }
+}

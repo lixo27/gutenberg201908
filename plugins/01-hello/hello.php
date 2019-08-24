@@ -7,3 +7,17 @@
  * License:     GNU General Public License v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
+
+add_action( 'init', function () {
+
+    wp_register_script(
+        'gutenberg201908-01-hello',
+        plugins_url( 'build/index.js', __FILE__ ),
+        [ 'wp-blocks', 'wp-i18n', 'wp-element' ]
+    );
+
+    register_block_type( 'gutenberg201908/01-hello', [
+        'editor_script' => 'gutenberg201908-01-hello',
+    ] );
+
+} );
