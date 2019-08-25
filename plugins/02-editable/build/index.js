@@ -71,10 +71,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/components/Edit/index.js":
-/*!**************************************!*\
-  !*** ./src/components/Edit/index.js ***!
-  \**************************************/
+/***/ "./src/components/Editor.js":
+/*!**********************************!*\
+  !*** ./src/components/Editor.js ***!
+  \**********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -85,14 +85,14 @@ __webpack_require__.r(__webpack_exports__);
 
 var RichText = wp.editor.RichText;
 
-var Edit = function Edit(_ref) {
+var Editor = function Editor(_ref) {
   var content = _ref.attributes.content,
-      setAttributes = _ref.setAttributes,
-      className = _ref.className;
+      className = _ref.className,
+      setAttributes = _ref.setAttributes;
 
-  var onChangeContent = function onChangeContent(newContent) {
+  var onChangeContent = function onChangeContent(content) {
     setAttributes({
-      newContent: newContent
+      content: content
     });
   };
 
@@ -100,19 +100,20 @@ var Edit = function Edit(_ref) {
     className: className
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText, {
     tagName: "p",
-    value: content,
-    onChange: onChangeContent
+    className: "editable__content",
+    onChange: onChangeContent,
+    value: content
   }));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Edit);
+/* harmony default export */ __webpack_exports__["default"] = (Editor);
 
 /***/ }),
 
-/***/ "./src/components/Save/index.js":
-/*!**************************************!*\
-  !*** ./src/components/Save/index.js ***!
-  \**************************************/
+/***/ "./src/components/Screen.js":
+/*!**********************************!*\
+  !*** ./src/components/Screen.js ***!
+  \**********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -123,15 +124,16 @@ __webpack_require__.r(__webpack_exports__);
 
 var RichText = wp.editor.RichText;
 
-var Save = function Save(_ref) {
-  var content = _ref.attributes;
+var Screen = function Screen(_ref) {
+  var content = _ref.attributes.content;
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(RichText.Content, {
     tagName: "p",
+    className: "editable__content",
     value: content
   }));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Save);
+/* harmony default export */ __webpack_exports__["default"] = (Screen);
 
 /***/ }),
 
@@ -144,25 +146,24 @@ var Save = function Save(_ref) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_Edit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Edit */ "./src/components/Edit/index.js");
-/* harmony import */ var _components_Save__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Save */ "./src/components/Save/index.js");
+/* harmony import */ var _components_Editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Editor */ "./src/components/Editor.js");
+/* harmony import */ var _components_Screen__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Screen */ "./src/components/Screen.js");
+
+
 var __ = wp.i18n.__;
 var registerBlockType = wp.blocks.registerBlockType;
-
-
-var attributes = {
-  content: {
-    type: 'array',
-    source: 'children',
-    selector: 'p'
-  }
-};
 registerBlockType('gutenberg201908/editable', {
   title: __('Editable', 'editable'),
   category: 'common',
-  attributes: attributes,
-  edit: _components_Edit__WEBPACK_IMPORTED_MODULE_0__["default"],
-  save: _components_Save__WEBPACK_IMPORTED_MODULE_1__["default"]
+  attributes: {
+    content: {
+      type: 'array',
+      source: 'children',
+      selector: '.editable__content'
+    }
+  },
+  edit: _components_Editor__WEBPACK_IMPORTED_MODULE_0__["default"],
+  save: _components_Screen__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 
 /***/ }),
