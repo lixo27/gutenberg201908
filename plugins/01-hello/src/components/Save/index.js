@@ -1,5 +1,5 @@
-const save = () => (
+const Save = () => (
     <div>hello, world! (but from front)</div>
 );
 
-export default save;
+export default Save;

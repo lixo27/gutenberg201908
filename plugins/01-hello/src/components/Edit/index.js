@@ -1,5 +1,5 @@
-const edit = ( { className } ) => (
+const Edit = ( { className } ) => (
     <div className={ className }>hello, world! (but from editor)</div>
 );
 
-export default edit;
+export default Edit;

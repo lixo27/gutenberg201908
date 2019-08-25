@@ -71,9 +71,9 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/components/edit/index.js":
+/***/ "./src/components/Edit/index.js":
 /*!**************************************!*\
-  !*** ./src/components/edit/index.js ***!
+  !*** ./src/components/Edit/index.js ***!
   \**************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -84,20 +84,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 
 
-var edit = function edit(_ref) {
+var Edit = function Edit(_ref) {
   var className = _ref.className;
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: className
   }, "hello, world! (but from editor)");
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (edit);
+/* harmony default export */ __webpack_exports__["default"] = (Edit);
 
 /***/ }),
 
-/***/ "./src/components/save/index.js":
+/***/ "./src/components/Save/index.js":
 /*!**************************************!*\
-  !*** ./src/components/save/index.js ***!
+  !*** ./src/components/Save/index.js ***!
   \**************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -108,11 +108,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 
 
-var save = function save() {
+var Save = function Save() {
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, "hello, world! (but from front)");
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (save);
+/* harmony default export */ __webpack_exports__["default"] = (Save);
 
 /***/ }),
 
@@ -125,8 +125,8 @@ var save = function save() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_edit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/edit */ "./src/components/edit/index.js");
-/* harmony import */ var _components_save__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/save */ "./src/components/save/index.js");
+/* harmony import */ var _components_Edit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/Edit */ "./src/components/Edit/index.js");
+/* harmony import */ var _components_Save__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Save */ "./src/components/Save/index.js");
 var __ = wp.i18n.__;
 var registerBlockType = wp.blocks.registerBlockType;
 
@@ -134,8 +134,8 @@ var registerBlockType = wp.blocks.registerBlockType;
 registerBlockType('gutenberg201908/hello', {
   title: __('Hello', 'hello'),
   category: 'common',
-  edit: _components_edit__WEBPACK_IMPORTED_MODULE_0__["default"],
-  save: _components_save__WEBPACK_IMPORTED_MODULE_1__["default"]
+  edit: _components_Edit__WEBPACK_IMPORTED_MODULE_0__["default"],
+  save: _components_Save__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 
 /***/ }),
