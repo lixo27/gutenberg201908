@@ -26,6 +26,7 @@ services:
     volumes:
       - wordpress_html:/var/www/html
       - ./plugins/01-hello:/var/www/html/wp-content/plugins/01-hello
+      - ./plugins/02-editable:/var/www/html/wp-content/plugins/02-editable
     depends_on:
       - mysql
 

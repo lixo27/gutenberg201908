@@ -13,7 +13,7 @@ add_action( 'init', function () {
     wp_register_script(
         'gutenberg201908-hello',
         plugins_url( 'build/index.js', __FILE__ ),
-        [ 'wp-blocks', 'wp-element', 'wp-i18n', ],
+        [ 'wp-blocks', 'wp-element', 'wp-i18n' ],
     );
 
     wp_register_style(
