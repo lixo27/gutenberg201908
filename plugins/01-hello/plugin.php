@@ -17,12 +17,18 @@ add_action( 'init', function () {
     );
 
     wp_register_style(
-        'gutenberg201908-hello',
-        plugins_url( 'src/index.css', __FILE__ ),
+        'gutenberg201908-hello-screen',
+        plugins_url( 'src/styles/screen.css', __FILE__ ),
+    );
+
+    wp_register_style(
+        'gutenberg201908-hello-editor',
+        plugins_url( 'src/styles/editor.css', __FILE__ ),
     );
 
     register_block_type( 'gutenberg201908/hello', [
-        'style' => 'gutenberg201908-hello',
+        'style' => 'gutenberg201908-hello-screen',
+        'editor_style' => 'gutenberg201908-hello-editor',
         'editor_script' => 'gutenberg201908-hello',
     ] );
 

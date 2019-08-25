@@ -6,7 +6,7 @@ import save from "./components/save";
 
 registerBlockType( 'gutenberg201908/hello', {
     title: __( 'Hello', 'hello' ),
-    category: 'layout',
+    category: 'common',
     edit,
     save,
 } );
