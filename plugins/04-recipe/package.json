@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "cgb-scripts": "^1.20.0"
   },
   "scripts": {
+    "start": "cgb-scripts start",
+    "build": "cgb-scripts build"
   }
 }
