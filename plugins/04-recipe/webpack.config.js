@@ -1,18 +1,5 @@
 const defaultConfig = require( "@wordpress/scripts/config/webpack.config" );
-const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
-
-const screenCSSPlugin = new ExtractTextPlugin( {
-    filename: './styles/screen.css',
-} );
-
-const editorCSSPlugin = new ExtractTextPlugin( {
-    filename: './styles/editor.css',
-} );
-
-const extractConfig = {
-    fallback: "style-loader",
-    use: "css-loader",
-};
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     ...defaultConfig,
@@ -21,20 +8,26 @@ module.exports = {
         rules: [
             ...defaultConfig.module.rules,
             {
-                test: /screen\.s?css$/,
-                exclude: /(node_modules)/,
-                use: ExtractTextPlugin.extract( extractConfig ),
-            },
-            {
-                test: /editor\.s?css$/,
-                exclude: /(node_modules)/,
-                use: ExtractTextPlugin.extract( extractConfig ),
+              test: /screen\.s?css$/,
+              exclude: /(node_modules)/,
+              use: [
+                {
+                  loader: MiniCssExtractPlugin.loader,
+                  options: {
+                    publicPath: 'build/',
+                  },
+                },
+                'style-loader',
+                'css-loader',
+                'sass-loader',
+              ],
             },
         ]
     },
     plugins: [
         ...defaultConfig.plugins,
-        screenCSSPlugin,
-        editorCSSPlugin
+        new MiniCssExtractPlugin({
+          filename: 'screen.css',
+        }),
     ],
 };

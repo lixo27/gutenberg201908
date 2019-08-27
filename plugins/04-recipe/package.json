@@ -3,10 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "cgb-scripts": "^1.20.0"
+    "@wordpress/scripts": "^3.4.0",
+    "mini-css-extract-plugin": "^0.8.0"
   },
   "scripts": {
-    "start": "cgb-scripts start",
-    "build": "cgb-scripts build"
+    "start": "wp-scripts start",
+    "build": "wp-scripts build"
+  },
+  "dependencies": {
+    "css-loader": "^3.2.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.3.1",
+    "style-loader": "^1.0.0"
   }
 }
