@@ -1,4 +1,3 @@
-import screen from "./styles/screen.scss";
 import Screen from "./components/Screen";
 import Editor from "./components/Editor";
 
