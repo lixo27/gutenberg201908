@@ -20,7 +20,6 @@ const Editor = ( {
     };
 
     const onSelectImage = ( media ) => {
-        console.log(media);
         setAttributes( {
             mediaURL: media.url,
             mediaID: media.id,
@@ -45,19 +44,17 @@ const Editor = ( {
                 onChange={ onChangeTitle }
             />
 
-            <div className="recipe__image">
-                <MediaUpload
-                    onSelect={ onSelectImage }
-                    allowedTypes="image"
-                    value={ mediaID }
-                    render={ ( { open } ) => (
-                        <Button className={ mediaID ? 'image-button' : 'button button-large' } onClick={ open }>
-                            { !mediaID ? __( 'Upload Image', 'recipe' ) :
-                                <img src={ mediaURL } alt={ __( 'Upload Recipe Image', 'recipe' ) }/> }
-                        </Button>
-                    ) }
-                />
-            </div>
+            <MediaUpload
+                onSelect={ onSelectImage }
+                allowedTypes="image"
+                value={ mediaID }
+                render={ ( { open } ) => (
+                    <Button className={ mediaID ? 'image-button' : 'button button-large' } onClick={ open }>
+                        { !mediaID ? __( 'Upload Image', 'recipe' ) :
+                            <img src={ mediaURL } alt={ __( 'Upload Recipe Image', 'recipe' ) }/> }
+                    </Button>
+                ) }
+            />
 
             <h3>{ __( 'Ingredients', 'recipe' ) }</h3>
 

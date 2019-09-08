@@ -1,3 +1,4 @@
+const { __ } = wp.i18n;
 const { RichText } = wp.editor;
 
 const Screen = ( { attributes: { title, mediaURL, ingredients, instructions }, className } ) => (
@@ -6,10 +7,10 @@ const Screen = ( { attributes: { title, mediaURL, ingredients, instructions }, c
         <RichText.Content tagName="h2" value={ title }/>
 
         { mediaURL && (
-            <img className="recipe__image" src={ mediaURL } alt={ __( 'Recipe Image', 'recipe' ) }/>
+            <img src={ mediaURL } alt={ __( 'Recipe Image', 'recipe' ) }/>
         ) }
 
-        <RichText.Content tagName="h2" className="ingredients" value={ ingredients }/>
+        <RichText.Content tagName="ul" className="ingredients" value={ ingredients }/>
         <RichText.Content tagName="div" className="steps" value={ instructions }/>
 
     </div>

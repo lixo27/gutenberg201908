@@ -117,7 +117,6 @@ var Editor = function Editor(_ref) {
   };
 
   var onSelectImage = function onSelectImage(media) {
-    console.log(media);
     setAttributes({
       mediaURL: media.url,
       mediaID: media.id
@@ -143,9 +142,7 @@ var Editor = function Editor(_ref) {
     placeholder: __('Write Recipe title…', 'recipe'),
     value: title,
     onChange: onChangeTitle
-  }), React.createElement("div", {
-    className: "recipe__image"
-  }, React.createElement(MediaUpload, {
+  }), React.createElement(MediaUpload, {
     onSelect: onSelectImage,
     allowedTypes: "image",
     value: mediaID,
@@ -159,7 +156,7 @@ var Editor = function Editor(_ref) {
         alt: __('Upload Recipe Image', 'recipe')
       }));
     }
-  })), React.createElement("h3", null, __('Ingredients', 'recipe')), React.createElement(RichText, {
+  }), React.createElement("h3", null, __('Ingredients', 'recipe')), React.createElement(RichText, {
     tagName: "ul",
     multiline: "li",
     placeholder: __('Write a list of ingredients…', 'recipe'),
@@ -189,6 +186,7 @@ var Editor = function Editor(_ref) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+var __ = wp.i18n.__;
 var RichText = wp.editor.RichText;
 
 var Screen = function Screen(_ref) {
@@ -204,11 +202,10 @@ var Screen = function Screen(_ref) {
     tagName: "h2",
     value: title
   }), mediaURL && React.createElement("img", {
-    className: "recipe__image",
     src: mediaURL,
     alt: __('Recipe Image', 'recipe')
   }), React.createElement(RichText.Content, {
-    tagName: "h2",
+    tagName: "ul",
     className: "ingredients",
     value: ingredients
   }), React.createElement(RichText.Content, {
