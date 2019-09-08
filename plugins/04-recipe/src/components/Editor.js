@@ -1,7 +1,7 @@
-const {
-    MediaUpload,
-    RichText,
-} = wp.editor;
+const { __ } = wp.i18n;
+const { MediaUpload } = wp.editor;
+const { RichText } = wp.editor;
+const { Button } = wp.components;
 
 const Editor = ( {
                      attributes: {
@@ -20,6 +20,7 @@ const Editor = ( {
     };
 
     const onSelectImage = ( media ) => {
+        console.log(media);
         setAttributes( {
             mediaURL: media.url,
             mediaID: media.id,

@@ -13,17 +13,17 @@ add_action( 'init', function () {
     wp_register_script(
         'gutenberg201908-recipe',
         plugins_url( 'build/index.js', __FILE__ ),
-        [ 'wp-blocks', 'wp-element', 'wp-i18n', 'wp-editor' ],
+        [ 'wp-blocks', 'wp-element', 'wp-i18n', 'wp-editor', 'underscore' ]
     );
 
     wp_register_style(
         'gutenberg201908-recipe-screen',
-        plugins_url( 'build/styles/screen.css', __FILE__ ),
+        plugins_url( 'build/styles/screen.css', __FILE__ )
     );
 
     wp_register_style(
         'gutenberg201908-recipe-editor',
-        plugins_url( 'build/styles/editor.css', __FILE__ ),
+        plugins_url( 'build/styles/editor.css', __FILE__ )
     );
 
     register_block_type( 'gutenberg201908/recipe', [
