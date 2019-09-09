@@ -1,1 +1,2 @@
-import './blocks/hello';
+import "./blocks/editable"
+import "./blocks/hello";
