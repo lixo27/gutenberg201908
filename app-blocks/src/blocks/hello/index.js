@@ -6,7 +6,7 @@ const { registerBlockType } = wp.blocks;
 
 registerBlockType( 'app-blocks/hello', {
     title: __( 'Hello', 'app-blocks' ),
-    category: 'common',
+    category: 'app-blocks',
     edit: Editor,
     save: Screen,
 } );

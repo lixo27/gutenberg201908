@@ -38,3 +38,15 @@ add_action( 'init', function () {
     ] );
 
 } );
+
+add_filter( 'block_categories', function ( $categories ) {
+
+    return array_merge( $categories, [
+        [
+            'slug' => 'app-blocks',
+            'title' => 'App Blocks',
+            'icon' => null,
+        ]
+    ] );
+
+}, 10 );
