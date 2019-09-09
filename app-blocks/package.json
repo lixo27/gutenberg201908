@@ -1,0 +1,18 @@
+{
+  "name": "app-blocks",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^3.2.0",
+    "laravel-mix": "^4.1.2",
+    "node-sass": "^4.12.0",
+    "resolve-url-loader": "3.1.0",
+    "sass-loader": "^7.3.1"
+  },
+  "scripts": {
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js"
+  }
+}
