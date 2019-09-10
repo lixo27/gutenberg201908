@@ -1,0 +1,20 @@
+.wp-block-app-blocks-controls {
+
+  p {
+    background-color: #ffe6e6;
+    padding: 20px;
+  }
+
+  &.alignment-left {
+    text-align: left;
+  }
+
+  &.alignment-right {
+    text-align: right;
+  }
+
+  &.alignment-center {
+    text-align: center;
+  }
+
+}
