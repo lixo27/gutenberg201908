@@ -22,6 +22,16 @@ registerBlockType( 'app-blocks/recipe', {
             selector: 'img',
             attribute: 'src',
         },
+        recipeIngredients: {
+            type: 'array',
+            source: 'children',
+            selector: '.ingredients',
+        },
+        recipeInstructions: {
+            type: 'array',
+            source: 'children',
+            selector: '.instructions',
+        },
     },
     edit: Editor,
     save: Screen,

@@ -34,6 +34,8 @@ const Editor = (
             recipeTitle,
             recipeMediaID,
             recipeMediaURL,
+            recipeIngredients,
+            recipeInstructions
         },
         className,
         setAttributes
@@ -51,6 +53,14 @@ const Editor = (
         } );
     };
 
+    const onChangeRecipeIngredients = ( recipeIngredients ) => {
+        setAttributes( { recipeIngredients } );
+    };
+
+    const onChangeRecipeInstructions = ( recipeInstructions ) => {
+        setAttributes( { recipeInstructions } );
+    };
+
     return (
         <div className={ className }>
 
@@ -64,6 +74,26 @@ const Editor = (
                 recipeMediaID={ recipeMediaID }
                 recipeMediaURL={ recipeMediaURL }
                 onSelect={ onSelectRecipeImage }
+            />
+
+            <h3>{ __( 'Ingredients', 'app-blocks' ) }</h3>
+
+            <RichText
+                tagName="ul"
+                multiline="li"
+                className="ingredients"
+                value={ recipeIngredients }
+                onChange={ onChangeRecipeIngredients }
+            />
+
+            <h3>{ __( 'Instructions', 'app-blocks' ) }</h3>
+
+            <RichText
+                tagName="div"
+                multiline="p"
+                className="steps"
+                value={ recipeInstructions }
+                onChange={ onChangeRecipeInstructions }
             />
 
         </div>
