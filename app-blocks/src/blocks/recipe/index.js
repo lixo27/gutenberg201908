@@ -13,6 +13,15 @@ registerBlockType( 'app-blocks/recipe', {
             source: 'children',
             selector: 'h2',
         },
+        recipeMediaID: {
+            type: 'number',
+        },
+        recipeMediaURL: {
+            type: 'string',
+            source: 'attribute',
+            selector: 'img',
+            attribute: 'src',
+        },
     },
     edit: Editor,
     save: Screen,
