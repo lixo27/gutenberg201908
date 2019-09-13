@@ -1,5 +1,5 @@
-const Screen = ( { className } ) => (
-    <div className={ className }>
+const Screen = () => (
+    <div>
         <p>hello, world! (but from screen)</p>
     </div>
 );

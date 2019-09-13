@@ -1,7 +1,7 @@
 const { RichText } = wp.editor;
 
-const Screen = ( { attributes: { content }, className } ) => (
-    <div className={ className }>
+const Screen = ( { attributes: { content } } ) => (
+    <div>
         <RichText.Content
             tagName="p"
             value={ content }
