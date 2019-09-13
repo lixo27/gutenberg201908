@@ -1,7 +1,8 @@
 const { RichText } = wp.editor;
+const { getBlockDefaultClassName } = wp.blocks;
 
 const Screen = ( { attributes: { content, alignment } } ) => {
-    const className = wp.blocks.getBlockDefaultClassName( 'app-blocks/controls' );
+    const className = getBlockDefaultClassName( 'app-blocks/controls' );
     const classModifier = `${ className }--${ alignment }`;
 
     return (
