@@ -49,4 +49,4 @@ add_filter( 'block_categories', function ( $categories ) {
         ]
     ] );
 
-}, 10 );
+} );
