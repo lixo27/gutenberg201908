@@ -3,6 +3,7 @@ const { BlockControls } = wp.editor;
 const { RichText } = wp.editor;
 
 const Editor = ( { attributes: { content, alignment }, className, setAttributes } ) => {
+    const classModifier = `${ className }--${ alignment }`;
 
     const onChangeContent = ( content ) => {
         setAttributes( { content } );
@@ -20,7 +21,7 @@ const Editor = ( { attributes: { content, alignment }, className, setAttributes 
                     onChange={ onChangeAlignment }
                 />
             </BlockControls>
-            <div className={ className + ` alignment-${alignment}` }>
+            <div className={ `${ className } ${ classModifier }` }>
                 <RichText
                     tagName="p"
                     onChange={ onChangeContent }
